@@ -4,6 +4,10 @@ body {
     padding: 0;
 }
 
+.wrapper {
+    position: relative;
+}
+
 .img {
     height: 100vh;
     object-fit: cover;
@@ -18,15 +22,29 @@ body {
     left: 0;
 }
 
+.img-overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0);
+    /* Default darker overlay */
+    transition: background 0.3s ease;
+    z-index: 9999999;
+}
+
 .text {
-    margin-left: auto;
-    margin-right: auto;
+    margin: auto;
+    /* margin-left: auto; */
+    /* margin-right: auto; */
     height: 100%;
     width: 70%;
     position: relative;
     z-index: 99999;
     background-color: transparent;
-    font-size: 8rem;
+    font-size: 4rem;
     color: white;
 }
 
@@ -35,7 +53,6 @@ body {
     position: relative;
     margin-top: 100vh;
     height: 100%;
-    background-color: rgba(white, 0.5);
     z-index: 9999;
     border-top: 2em solid rgba(white, 0.1);
 }

@@ -1,6 +1,24 @@
 gsap.registerPlugin(ScrollTrigger)
 
 const splitTypes = document.querySelectorAll('.text')
+const bgOverlay = document.querySelector('.img-overlay');
+
+const bgDark = 'rgba(0, 0, 0, 0.6)'; // Darker overlay color
+const bgLight = 'rgba(0, 0, 0, 0.3)'; // Lighter overlay color
+
+gsap.to(bgOverlay, {
+    background: bgDark,
+    duration: 0.5,
+    scrollTrigger: {
+        trigger: bgOverlay,
+        start: 'top 0%',
+        end: 'bottom 30%',
+        scrub: true,
+        markers: false,
+        toggleActions: 'play play reverse reverse'
+    }
+});
+
 
 splitTypes.forEach((char, i) => {
 
@@ -9,36 +27,22 @@ splitTypes.forEach((char, i) => {
 
     const text = new SplitType(char, { types: 'lines' })
 
-    // gsap.fromTo(text.lines,
-    //     {
-    //         color: bg,
-    //     },
-    //     {
-    //         color: fg,
-    //         duration: 0.3,
-    //         stagger: 0.02,
-    //         scrollTrigger: {
-    //             trigger: char,
-    //             start: 'top 80%',
-    //             end: 'top 20%',
-    //             scrub: true,
-    //             markers: false,
-    //             toggleActions: 'play play reverse reverse'
-    //         }
-    //     })
-
     gsap.from(text.lines, {
         scrollTrigger: {
             trigger: char,
             start: 'top 50%',
-            end: 'bottom 90%',
+            end: 'bottom 100%',
             scrub: true,
-            markers: true,
+            markers: false,
+            toggleActions: 'play play reverse reverse'
         },
         opacity: 0.1,
-        stagger: 0.2,
+        stagger: 0.3,
+
     })
 })
+
+
 
 
 const lenis = new Lenis()
