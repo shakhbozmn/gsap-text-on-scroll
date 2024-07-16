@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.img {
+    height: 100vh;
+    object-fit: cover;
+    background: url(./assets/img.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.text {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 70%;
+    position: relative;
+    z-index: 99999;
+    background-color: transparent;
+    font-size: 8rem;
+    color: white;
+}
+
+.text-overlay {
+    width: 100%;
+    position: relative;
+    margin-top: 100vh;
+    height: 100%;
+    background-color: rgba(white, 0.5);
+    z-index: 9999;
+    border-top: 2em solid rgba(white, 0.1);
+}
